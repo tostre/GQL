@@ -90,6 +90,7 @@ module.exports = new GraphQLSchema({
                         })
                 }
             },
+            //TEST
             recipe: {
                 type: RecipeType,
                 args: {
