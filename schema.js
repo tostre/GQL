@@ -1,5 +1,4 @@
 const{GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList,GraphQLID, GraphQLNonNull} = require("graphql")
-const mysql = require("mysql");
 const Database = require("./database");
 const db = new Database();
 
