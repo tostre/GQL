@@ -49,7 +49,7 @@ const RecipeType = new GraphQLObjectType({
         }
     }
 });
-
+// LAPTOP TEST
 const UserType = new GraphQLObjectType({
     name: "User",
     fields: {
