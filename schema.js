@@ -2,7 +2,28 @@ const{GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLList,G
 const Database = require("./database");
 const db = new Database();
 
+// TU TUN:
+// Features (ohne Code, nur allgemein)
+// 		Querys und Mutations
+// 		Fields
+// 		Arguments & Aliases
+// 		Variables
+// 		Directives (if-Statements)
+// 	Datentypen
+// 		Query Type & Mutation Type
+// 		Objekttypen (können eigene Felder haben, müssen definiert werden)
+// 		Skalartypen (Int, Float, String, Boolean, ID)
+// 		Enum Types
+// 		Array und Non-Null (technisch gesehen keine wirklichen Typen, nur Modifier)
+// 		Input Type
 
+// WAS FEHLT:
+// MUTATION
+// ALIASES
+// VARIABLES
+// DIRECTIVES
+// ENUM TYPES
+// INPUT TYPE
 
 //////////////// Schema definition, from leafs to root
 const RecipeType = new GraphQLObjectType({
