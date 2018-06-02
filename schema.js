@@ -32,18 +32,21 @@ const RecipeType = new GraphQLObjectType({
         rId: {
             type: GraphQLInt,
             resolve: (root) => {
+                console.log("RecipeType rId resolver");
                 return root.rId;
             }
         },
         name: {
             type: GraphQLString,
             resolve: (root) => {
+                console.log("RecipeType name resolver");
                 return root.name;
             }
         },
         rating: {
             type: GraphQLInt,
             resolve: (root) => {
+                console.log("RecipeType rating resolver");
                 return root.rating;
             }
         }
@@ -124,6 +127,31 @@ module.exports = new GraphQLSchema({
                         })
                 }
             }
+        })
+    }),
+    mutation: new GraphQLObjectType({
+        name: "Mutation",
+        fields: () => ({
+            recipe: {
+                type: RecipeType,
+                args: {
+                    rId: {type: new GraphQLNonNull(GraphQLInt)},
+                    rating: {type: new GraphQLNonNull(GraphQLInt)}
+                },
+                resolve: (root, args) => {
+                    return db.query(`UPDATE recipes SET rating = ${args.rating} WHERE rId = ${args.rId}`)
+                        .then(() => {
+                            return {rId: 0, name: "UPDATED", rating: 0};
+                        })
+
+                    // Alter db entry
+                    // Query recipe db entry
+                    // Give it to field resolver
+
+
+                }
+            }
+
         })
     })
 });
