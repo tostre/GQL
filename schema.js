@@ -32,21 +32,18 @@ const RecipeType = new GraphQLObjectType({
         rId: {
             type: GraphQLInt,
             resolve: (root) => {
-                console.log("RecipeType rId resolver");
                 return root.rId;
             }
         },
         name: {
             type: GraphQLString,
             resolve: (root) => {
-                console.log("RecipeType name resolver");
                 return root.name;
             }
         },
         rating: {
             type: GraphQLInt,
             resolve: (root) => {
-                console.log("RecipeType rating resolver");
                 return root.rating;
             }
         }
@@ -143,12 +140,6 @@ module.exports = new GraphQLSchema({
                         .then(() => {
                             return {rId: 0, name: "UPDATED", rating: 0};
                         })
-
-                    // Alter db entry
-                    // Query recipe db entry
-                    // Give it to field resolver
-
-
                 }
             }
 
